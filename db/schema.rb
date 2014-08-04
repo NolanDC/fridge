@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140804015726) do
   create_table "doors", force: true do |t|
     t.string   "name"
     t.string   "hex"
+    t.boolean  "private"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

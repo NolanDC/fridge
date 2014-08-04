@@ -3,7 +3,7 @@ class CreateDoors < ActiveRecord::Migration
     create_table :doors do |t|
       t.string :name
       t.string :hex
-
+      t.boolean :private
       t.timestamps
     end
   end

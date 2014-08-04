@@ -5,3 +5,36 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+door = Door.create(name: 'First Door')
+
+words = %w(
+man
+the
+cat
+dog
+chicken
+ate
+looked
+at
+the
+a
+car
+metal
+ran
+swam
+fly
+plane
+moon
+left
+woman
+wife
+girl
+boy
+computer
+)
+
+words.each do |word|
+  door.magnets.create(word: word, x: rand(1400), y: rand(900))
+end

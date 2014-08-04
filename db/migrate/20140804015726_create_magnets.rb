@@ -6,7 +6,7 @@ class CreateMagnets < ActiveRecord::Migration
       t.string :word
       t.datetime :locked_until
       t.integer :locked_by
-      t.integer :fridge_id
+      t.integer :door_id
 
       t.timestamps
     end

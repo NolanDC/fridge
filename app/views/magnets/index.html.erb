@@ -1,0 +1,35 @@
+<h1>Listing magnets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th>Word</th>
+      <th>Locked until</th>
+      <th>Locked by</th>
+      <th>Fridge</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @magnets.each do |magnet| %>
+      <tr>
+        <td><%= magnet.x %></td>
+        <td><%= magnet.y %></td>
+        <td><%= magnet.word %></td>
+        <td><%= magnet.locked_until %></td>
+        <td><%= magnet.locked_by %></td>
+        <td><%= magnet.fridge_id %></td>
+        <td><%= link_to 'Show', magnet %></td>
+        <td><%= link_to 'Edit', edit_magnet_path(magnet) %></td>
+        <td><%= link_to 'Destroy', magnet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Magnet', new_magnet_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  x: 1
+  'y': 1
+  word: MyString
+  locked_until: 2014-08-03 21:57:26
+  locked_by: 1
+  fridge_id: 1
+
+two:
+  x: 1
+  'y': 1
+  word: MyString
+  locked_until: 2014-08-03 21:57:26
+  locked_by: 1
+  fridge_id: 1

@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140804015726) do
     t.string   "word"
     t.datetime "locked_until"
     t.integer  "locked_by"
-    t.integer  "fridge_id"
+    t.integer  "door_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

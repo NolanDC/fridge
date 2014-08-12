@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require turbolinks
 //= require angular
+//= require angular-resource
 //= require_tree .
 
 

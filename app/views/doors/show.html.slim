@@ -1,4 +1,5 @@
 .title = @door.name
 #door
   - @door.magnets.each do |m|
-    div = m.word
+    div.magnet style="#{m.position_style}"
+      = m.word

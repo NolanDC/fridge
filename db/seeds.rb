@@ -36,5 +36,5 @@ computer
 )
 
 words.each do |word|
-  door.magnets.create(word: word, x: rand(1400), y: rand(900))
+  door.magnets.create(word: word, x: rand(1300), y: rand(750))
 end

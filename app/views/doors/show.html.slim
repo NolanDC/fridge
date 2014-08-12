@@ -1,5 +1,5 @@
 .title = @door.name
-#door
-  - @door.magnets.each do |m|
-    div.magnet style="#{m.position_style}"
-      = m.word
+#door ng-controller="FridgeController"
+  div ng-repeat="magnet in magnets"
+    div.magnet ng-style="{'left': magnet.x, 'top': magnet.y}"
+      | {{magnet.word}}

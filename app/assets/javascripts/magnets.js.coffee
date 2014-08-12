@@ -4,4 +4,18 @@
 
 
 $ ->
-  $('.magnet').draggable()
+  $('.magnet').draggable
+    stop: updateMagnet
+
+
+
+updateMagnet = (event, ui) ->
+  #$(this).css('color', 'red')
+
+
+class Magnet
+  constructor: (@x, @y) ->
+
+  update: (x, y) ->
+    
+

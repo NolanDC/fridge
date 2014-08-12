@@ -1,10 +1,11 @@
 class MagnetsController < ApplicationController
   before_action :set_magnet, only: [:show, :edit, :update, :destroy]
+  before_action :set_door
 
   # GET /magnets
   # GET /magnets.json
   def index
-    @magnets = Magnet.all
+    @magnets = @door.magnets
   end
 
   # GET /magnets/1
@@ -65,6 +66,10 @@ class MagnetsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_magnet
       @magnet = Magnet.find(params[:id])
+    end
+
+    def set_door
+      @door = Door.find(params[:door_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

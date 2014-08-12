@@ -1,5 +1,4 @@
 .title = @door.name
 #door ng-controller="FridgeController"
-  div ng-repeat="magnet in magnets"
-    div.magnet ng-style="{'left': magnet.x, 'top': magnet.y}"
+    div.magnet ng-repeat="magnet in magnets" ng-draggable="true" ng-style="{'left': magnet.x, 'top': magnet.y}" ng-drag-success=""
       | {{magnet.word}}

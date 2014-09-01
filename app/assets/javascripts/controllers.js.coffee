@@ -15,13 +15,17 @@ fridgeApp.controller 'FridgeController', ($scope, $http, $resource) ->
   $scope.init = (id) ->
     Magnet = $resource("/doors/:door_id/magnets/:id.json", {door_id: id, id: "@id"}, {update: {method: "PUT"}})
     $scope.magnets = Magnet.query()
-  #javascript:
-  #var dispatcher = new WebSocketRails('localhost:3000/websocket');
-  #channel = dispatcher.subscribe('fridge');
-  #channel.bind('update', function(post) {
-  #  console.log('log dat shit son');
-  #  console.log(post);
-  #});
+    window.magnets = $scope.magnets
 
-  
+    dispatcher = new WebSocketRails('localhost:3000/websocket');
+    channel = dispatcher.subscribe("door-#{id}")
+    channel.bind 'update', (magnet) ->
+
+      # Eventually replace with Service-cache, rather than loop
+      for m, index in $scope.magnets 
+        if m.id == magnet.id
+          $scope.magnets[index].$get()
+
+
+    
 

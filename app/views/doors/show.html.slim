@@ -1,4 +1,4 @@
 .title = @door.name
 #door ng-controller="FridgeController" ng-init="init(#{@door.id})"
-    div.magnet id="{{magnet.id + '-magnet'}}" ng-repeat="magnet in magnets" ng-draggable="{stop:updateMagnet}" ng-style="{'left': magnet.x, 'top': magnet.y}" ng-drag-success=""
+    div.magnet id="{{magnet.id + '-magnet'}}" ng-repeat="magnet in magnets" ng-draggable="{stop:updateMagnet}" ng-style="{'left': magnet.x, 'top': magnet.y}" ng-drag-success="" class="ng-cloak"
       | {{magnet.word}}

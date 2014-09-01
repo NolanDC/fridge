@@ -4,4 +4,8 @@ class Magnet < ActiveRecord::Base
   def position_style
     "left: #{x}px; top: #{y}px;"
   end
+
+  def trigger_update
+    door.trigger('update', self)
+  end
 end

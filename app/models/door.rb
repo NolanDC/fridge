@@ -6,6 +6,10 @@ class Door < ActiveRecord::Base
     self.hex
   end
 
+  def trigger event, data
+    WebsocketRails["door-#{self.hex}"].trigger(event, data)
+  end
+
   private
   def generate_hex
     self.hex = SecureRandom.hex

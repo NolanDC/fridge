@@ -4,6 +4,7 @@ fridgeApp = angular.module('fridgeApp', ['ngResource'])
       link: (scope, elm, attrs) ->
         options = scope.$eval(attrs.ngDraggable)
         elm.draggable
+          containment: 'parent'
           stop: (event, ui) ->
             $magnet = $(event.target)
             scope.magnet.x = $magnet.css('left')

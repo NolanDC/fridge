@@ -22,9 +22,9 @@ fridgeApp.controller 'FridgeController', ($scope, $http, $resource) ->
     channel.bind 'update', (magnet) ->
 
       # Eventually replace with Service-cache, rather than loop
-      for m, index in $scope.magnets 
+      for m in $scope.magnets 
         if m.id == magnet.id
-          $scope.magnets[index].$get()
+          m.$get()
 
 
     

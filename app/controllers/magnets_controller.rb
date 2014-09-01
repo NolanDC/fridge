@@ -71,7 +71,8 @@ class MagnetsController < ApplicationController
     end
 
     def set_door
-      @door = Door.find(params[:door_id])
+      #@door = Door.find(params[:door_id])
+      @door = Door.find_by!(hex: params[:door_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

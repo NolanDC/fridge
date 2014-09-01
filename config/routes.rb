@@ -59,5 +59,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  root to: 'doors#show', id: 1
+  root to: 'doors#show', id: Door.first.hex
 end

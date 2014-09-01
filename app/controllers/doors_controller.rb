@@ -64,7 +64,7 @@ class DoorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_door
-      @door = Door.find(params[:id])
+      @door = Door.find_by!(hex: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

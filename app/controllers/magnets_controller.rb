@@ -43,6 +43,8 @@ class MagnetsController < ApplicationController
   def update
     respond_to do |format|
       if @magnet.update(magnet_params)
+        # Update with websockets
+        WebsocketRails[:fridge].trigger 'update', @magnet
         format.html { redirect_to door_magnet_path(@door, @magnet), notice: 'Magnet was successfully updated.' }
         format.json { render :show, status: :ok, location: door_magnet_url(@door, @magnet) }
       else

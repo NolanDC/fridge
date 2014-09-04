@@ -3,6 +3,7 @@
     =f.text_field :name, placeholder: 'name'
 
   .field
+    .hint Type and press enter to add words. Click to remove.
     .wordlist-wrapper
       - Door::DEFAULT_WORDS.each do |word|
         span.word = "#{word} "

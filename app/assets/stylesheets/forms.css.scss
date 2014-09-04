@@ -1,3 +1,5 @@
+@import "mixins";
+
 $light-red: #F1D6D6;
 $error-red: #6E1616;
 
@@ -44,12 +46,8 @@ form {
   border: 1px solid #555;
   padding: 4px 4px 0 4px;
   text-align: left;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;  
+  
+  @include user-select(none);
 
   .word {
     border: 1px solid black;

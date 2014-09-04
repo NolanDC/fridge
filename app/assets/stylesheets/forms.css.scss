@@ -1,0 +1,65 @@
+$light-red: #F1D6D6;
+$error-red: #6E1616;
+
+form {
+
+  .field {
+    margin-bottom: 10px;
+  }
+
+  input, textarea {
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  input[type="text"], textarea {
+    padding: 4px;
+    font-size: 20px;
+    border: 1px solid #555;
+  }
+
+  input[type="submit"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    background: white;
+    cursor: pointer;
+    width: 80%;
+
+    &:hover {
+      box-shadow: 0 0 3px #aaa;
+    }
+  }
+}
+
+.wordlist-wrapper {
+  border: 1px solid #555;
+  padding: 4px;
+  text-align: left;
+  
+  .word {
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 3px;
+  }
+  .wordlist {
+    border: none;
+  }  
+}
+
+.centered-form {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+}

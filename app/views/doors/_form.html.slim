@@ -1,13 +1,12 @@
 = form_for(@door) do |f|
-  - if @door.errors.any? 
-    #error_explanation
-      = pluralize(@door.errors.count, "error")
-      | prohibited this door from being saved:
-      - @door.errors.full_messages.each do |message|
-        li = message
   .field
-    = f.label :name
-    =f.text_field :name
+    =f.text_field :name, placeholder: 'name'
+
+  .field
+    .wordlist-wrapper
+      - Door::DEFAULT_WORDS.each do |word|
+        span.word = "#{word} "
+      = text_area_tag 'wordlist', '', class: 'wordlist'
 
   .field.actions
     = f.submit

@@ -6,7 +6,7 @@
     .wordlist-wrapper
       - Door::DEFAULT_WORDS.each do |word|
         span.word = "#{word} "
-      = text_area_tag 'wordlist', '', class: 'wordlist'
+      = text_field_tag 'add_word', '', class: 'new-word', placeholder: 'add word'
 
   .field.actions
     = f.submit

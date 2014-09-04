@@ -38,7 +38,7 @@ form {
   border: 1px solid #555;
   padding: 4px;
   text-align: left;
-  
+
   .word {
     border: 1px solid black;
     border-bottom: 2px solid black;
@@ -46,9 +46,18 @@ form {
     margin-right: 4px;
     margin-bottom: 4px;
     padding: 3px;
+    background: white;
+
+    &:hover {
+      box-shadow: 0 0 4px #aaa;
+      cursor: pointer;
+    }
   }
-  .wordlist {
+  .new-word {
+    padding: 6px;
     border: none;
+    width: 70px;
+    font-size: 13px;
   }  
 }
 

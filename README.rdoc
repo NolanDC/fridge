@@ -1,28 +1,20 @@
-== README
+== Fridge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fridge is a Rails + AngularJS application for creating refrigerator magnet poetry. Users can create public fridge doors with the words of their choice, and watch as users make move magnets and make poetry. The application uses websockets to update magnet positions as soon as they're moved.
 
-Things you may want to cover:
+To setup the application, run the following: 
 
-* Ruby version
+```
+rake app:reset
+```
 
-* System dependencies
+which will create, migrate, and seed the database.
 
-* Configuration
+To launch the server, simply run
 
-* Database creation
+```
+rails s
+```
 
-* Database initialization
+and view the application on `localhost:3000`
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

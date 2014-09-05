@@ -1,7 +1,5 @@
 @import "mixins";
-
-$light-red: #F1D6D6;
-$error-red: #6E1616;
+@import "colors";
 
 form {
 
@@ -40,35 +38,6 @@ form {
       box-shadow: 0 0 3px #aaa;
     }
   }
-}
-
-.wordlist-wrapper {
-  border: 1px solid #555;
-  padding: 4px 4px 0 4px;
-  text-align: left;
-  
-  @include user-select(none);
-
-  .word {
-    border: 1px solid black;
-    border-bottom: 2px solid black;
-    display: inline-block;
-    margin-right: 4px;
-    margin-bottom: 4px;
-    padding: 3px;
-    background: white;
-
-    &:hover {
-      box-shadow: 0 0 4px #aaa;
-      cursor: pointer;
-    }
-  }
-  .new-word {
-    padding: 6px;
-    border: none;
-    width: 70px;
-    font-size: 13px;
-  }  
 }
 
 .centered-form {

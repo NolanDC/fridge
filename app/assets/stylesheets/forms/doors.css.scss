@@ -1,0 +1,30 @@
+@import "mixins";
+
+.wordlist-wrapper {
+  text-align: left;
+  margin-bottom: 20px;
+
+  @include user-select(none);
+
+  .word {
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 3px;
+    background: white;
+
+    &:hover {
+      box-shadow: 0 0 4px #aaa;
+      cursor: pointer;
+    }
+  }
+  .new-word {
+    padding: 6px;
+    border: none;
+    width: 70px;
+    font-size: 13px;
+    outline: none;
+  }  
+}

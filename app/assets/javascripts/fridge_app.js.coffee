@@ -15,4 +15,12 @@
   link: (scope, element, attrs) ->
     element.on 'click', () ->
       $(attrs['focusInput']).focus()
- 
+
+@fridgeApp.directive 'ngEnter', () ->
+  link: (scope, element, attrs) ->
+    element.bind "keydown keypress", (event) ->
+      if(event.which == 13)
+        scope.$apply () ->
+          scope.$eval(attrs.ngEnter, {'event': event})
+        element.val('')
+        event.preventDefault()

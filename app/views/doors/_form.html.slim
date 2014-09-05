@@ -4,9 +4,9 @@
 
   .field
     .hint Type and press enter to add words. Click to remove.
-    .wordlist-wrapper
-      - Door::DEFAULT_WORDS.each do |word|
-        span.word = "#{word} "
+    .wordlist-wrapper focus-input=".new-word"
+      span.word ng-repeat="word in words track by $index" ng-click="remove(word);"
+        | {{word}}
       = text_field_tag 'add_word', '', class: 'new-word', placeholder: 'add word'
 
   .field.actions

@@ -3,6 +3,7 @@ class Door < ActiveRecord::Base
   has_many :magnets
 
   validates :name, presence: true
+  attr_accessor :wordlist
 
   def to_param
     self.hex

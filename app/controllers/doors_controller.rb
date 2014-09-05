@@ -14,7 +14,7 @@ class DoorsController < ApplicationController
 
   # GET /doors/new
   def new
-    @door = Door.new
+    @door = Door.new(wordlist: Door::DEFAULT_WORDS)
   end
 
   # GET /doors/1/edit

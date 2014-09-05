@@ -1,4 +1,4 @@
 .centered-form
   h1 New Door
-
-  = render 'form'
+  div ng-controller="DoorFormController" ng-init="init(['#{@door.wordlist.join('\',\'')}'])"
+    = render 'form'

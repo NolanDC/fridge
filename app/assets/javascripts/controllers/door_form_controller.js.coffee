@@ -10,5 +10,6 @@ fridgeApp.controller 'DoorFormController', ($scope, $http, $resource) ->
     $scope.door.words.push(word);
 
   $scope.createDoor = (e) ->
+    # TODO: Convert to ngResource
     $.post '/doors', {door: $scope.door}, (result) ->
       console.log(result)

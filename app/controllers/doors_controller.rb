@@ -24,7 +24,7 @@ class DoorsController < ApplicationController
   # POST /doors
   # POST /doors.json
   def create
-    # Clean up, possibly on Angular side by using magnets_attributes
+    # TODO: Clean up, possibly on Angular side by using magnets_attributes
     edited_params = door_params
     words = edited_params.delete(:words)
     magnets_attributes = words.map{|w| {word: w}}

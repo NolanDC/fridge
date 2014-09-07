@@ -1,13 +1,13 @@
-= form_for(@door) do |f|
+form ng-submit="createDoor()" 
   .field
-    =f.text_field :name, placeholder: 'name'
+    = text_field_tag :name, '', placeholder: 'name', 'ng-model' => 'door.name'
 
   .field
     .hint Type and press enter to add words. Click to remove.
     .wordlist-wrapper focus-input=".new-word"
-      span.word ng-repeat="word in words track by $index" ng-click="remove(word);"
+      span.word ng-repeat="word in door.words track by $index" ng-click="remove(word);"
         | {{word}}
       = text_field_tag 'add_word', '', class: 'new-word', placeholder: 'add word', 'ng-model' => 'newWord', 'ng-enter' => 'createWord(newWord);'
 
   .field.actions
-    = f.submit
+    = submit_tag

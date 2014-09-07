@@ -2,6 +2,8 @@ class Door < ActiveRecord::Base
   before_create :generate_hex
   has_many :magnets
 
+  accepts_nested_attributes_for :magnets
+
   validates :name, presence: true
   attr_accessor :wordlist
 

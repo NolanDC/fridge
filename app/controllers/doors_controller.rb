@@ -24,14 +24,17 @@ class DoorsController < ApplicationController
   # POST /doors
   # POST /doors.json
   def create
-    @door = Door.new(door_params)
+    # Clean up, possibly on Angular side by using magnets_attributes
+    edited_params = door_params
+    words = edited_params.delete(:words)
+    magnets_attributes = words.map{|w| {word: w}}
+    @door = Door.new(edited_params.merge(magnets_attributes: magnets_attributes))
 
     respond_to do |format|
       if @door.save
         format.html { redirect_to @door, notice: 'Door was successfully created.' }
         format.json { render :show, status: :created, location: @door }
       else
-        format.html { render :new }
         format.json { render json: @door.errors, status: :unprocessable_entity }
       end
     end
@@ -69,6 +72,6 @@ class DoorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def door_params
-      params.require(:door).permit(:name, :hex)
+      params.require(:door).permit(:name, words: [])
     end
 end

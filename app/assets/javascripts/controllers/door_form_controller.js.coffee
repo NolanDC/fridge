@@ -1,10 +1,14 @@
 fridgeApp.controller 'DoorFormController', ($scope, $http, $resource) ->
   $scope.init = (wordlist) ->
-    $scope.words = wordlist
+    $scope.door = {words: wordlist}
 
   $scope.remove = (word) ->
-    index = $scope.words.indexOf(word)
-    $scope.words.splice(index, 1);  
+    index = $scope.door.words.indexOf(word)
+    $scope.door.words.splice(index, 1);  
 
   $scope.createWord = (word) ->
-    $scope.words.push(word);
+    $scope.door.words.push(word);
+
+  $scope.createDoor = (e) ->
+    $.post '/doors', {door: $scope.door}, (result) ->
+      console.log(result)

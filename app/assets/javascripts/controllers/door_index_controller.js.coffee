@@ -6,7 +6,7 @@ fridgeApp.controller 'DoorIndexController', ($scope, $http, $resource, DoorResou
   channel = dispatcher.subscribe('doors')
   
   channel.bind 'subscriber-joined', (data) ->
-    # TODO don't get all of the doors
+    # TODO use service to get cached doors rather than checking for hex equivalence
     for door, index in $scope.doors 
       if door.hex == data.hex
         $scope.$apply () ->

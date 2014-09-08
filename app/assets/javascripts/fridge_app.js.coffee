@@ -24,3 +24,6 @@
           scope.$eval(attrs.ngEnter, {'event': event})
         element.val('')
         event.preventDefault()
+
+@fridgeApp.factory 'DoorResource', ($resource) ->
+  return $resource('/doors/:id', {id: '@id'})

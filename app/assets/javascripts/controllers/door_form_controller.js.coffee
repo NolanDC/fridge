@@ -1,4 +1,4 @@
-fridgeApp.controller 'DoorFormController', ($scope, $http, $resource) ->
+fridgeApp.controller 'DoorFormController', ($scope, $http, $resource, DoorResource) ->
   $scope.init = (wordlist) ->
     $scope.door = {words: wordlist}
 
@@ -10,6 +10,5 @@ fridgeApp.controller 'DoorFormController', ($scope, $http, $resource) ->
     $scope.door.words.push(word);
 
   $scope.createDoor = (e) ->
-    # TODO: Convert to ngResource
-    $.post '/doors', {door: $scope.door}, (result) ->
-      console.log(result)
+    door = new DoorResource({door: $scope.door})
+    door.$save()

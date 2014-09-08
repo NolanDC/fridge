@@ -7,7 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-door = Door.create(name: 'First Door')
+door_names = 'First Door', 'Another Door', 'Public Door'
+doors = door_names.map {|name|  Door.create(name: name) }
 
 words = %w(
 man
@@ -36,5 +37,7 @@ computer
 )
 
 words.each do |word|
-  door.magnets.create(word: word, x: rand(1300), y: rand(750))
+  doors.each do |door|
+    door.magnets.create(word: word, x: rand(1300), y: rand(750))
+  end
 end

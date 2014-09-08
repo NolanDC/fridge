@@ -1,2 +1,8 @@
-- @doors.each do |door|
-  .door = door.name
+.centered
+  h1 Public Doors
+  #doors
+    - @doors.each do |door|
+      .door
+        = link_to door do
+          span = door.name
+          span.subscribers = door.subscribers.length

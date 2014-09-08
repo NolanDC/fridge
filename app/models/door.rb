@@ -7,12 +7,18 @@ class Door < ActiveRecord::Base
   validates :name, presence: true
   attr_accessor :wordlist
 
+  delegate :subscribers, to: :websocket_channel
+
   def to_param
     self.hex
   end
 
+  def websocket_channel
+    WebsocketRails["door-#{self.hex}"]
+  end
+
   def trigger event, data
-    WebsocketRails["door-#{self.hex}"].trigger(event, data)
+    websocket_channel.trigger(event, data)
   end
 
   private

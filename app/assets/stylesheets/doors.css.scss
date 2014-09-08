@@ -27,3 +27,16 @@
   text-decoration: none;
   color: inherit;
 }
+
+#doors {
+  .door {
+    a {
+      padding: 10px;
+      display: block;
+      
+      &:hover {
+        background: #f2f2f2;
+      }      
+    }
+  }  
+}

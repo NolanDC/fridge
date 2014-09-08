@@ -22,6 +22,7 @@ class Door < ActiveRecord::Base
   end
 
   def update_subscribers
+    # TODO allow removal of subscribers
     data = {hex: self.hex, subscribers: self.subscribers.length+1}
     WebsocketRails['doors'].trigger('subscriber-joined', data)
   end

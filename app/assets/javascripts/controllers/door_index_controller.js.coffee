@@ -7,8 +7,7 @@ fridgeApp.controller 'DoorIndexController', ($scope, $http, $resource, DoorResou
   
   channel.bind 'subscriber-joined', (data) ->
     # TODO don't get all of the doors
-    console.log(data)
     for door, index in $scope.doors 
       if door.hex == data.hex
         $scope.$apply () ->
-          $scope.doors[index].subscribers = data.subscribers
+          door.subscribers+=1

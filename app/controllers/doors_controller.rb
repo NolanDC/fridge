@@ -1,10 +1,13 @@
 class DoorsController < ApplicationController
   before_action :set_door, only: [:show, :edit, :update, :destroy]
 
+  respond_to :json, :html
+
   # GET /doors
   # GET /doors.json
   def index
     @doors = Door.where(private: false)
+    respond_with @doors
   end
 
   # GET /doors/1

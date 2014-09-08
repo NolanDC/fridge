@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :doors do
-    resources :magnets
+    resources :magnets, defaults: {format: :json}
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

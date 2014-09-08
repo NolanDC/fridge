@@ -26,4 +26,8 @@
         event.preventDefault()
 
 @fridgeApp.factory 'DoorResource', ($resource) ->
-  return $resource('/doors/:id', {id: '@id'})
+  return $resource('/doors/:id.json', {id: '@id'})
+
+@fridgeApp.filter 'removeExtension', () ->
+  (url, params) ->
+    url.replace(/\.[^/.]+$/, "")

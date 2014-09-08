@@ -7,9 +7,9 @@ fridgeApp.controller 'DoorController', ($scope, $http, $resource) ->
 
     dispatcher = new WebSocketRails('localhost:3000/websocket');
     channel = dispatcher.subscribe("door-#{id}")
+    
     channel.bind 'update', (magnet) ->
-
-      # Eventually replace with Service-cache, rather than loop
+      # TODO: Eventually replace with Service-cache, rather than loop
       for m in $scope.magnets 
         if m.id == magnet.id
           m.$get()

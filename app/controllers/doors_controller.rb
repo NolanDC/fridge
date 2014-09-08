@@ -13,6 +13,7 @@ class DoorsController < ApplicationController
   # GET /doors/1
   # GET /doors/1.json
   def show
+    @door.update_subscribers
   end
 
   # GET /doors/new

@@ -21,6 +21,11 @@ class Door < ActiveRecord::Base
     websocket_channel.trigger(event, data)
   end
 
+  def update_subscribers
+    data = {hex: self.hex, subscribers: self.subscribers.length+1}
+    WebsocketRails['doors'].trigger('subscriber-joined', data)
+  end
+
   private
   def generate_hex
     self.hex = SecureRandom.hex

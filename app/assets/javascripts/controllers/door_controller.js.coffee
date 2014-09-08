@@ -1,4 +1,4 @@
-fridgeApp.controller 'FridgeController', ($scope, $http, $resource) ->
+fridgeApp.controller 'DoorController', ($scope, $http, $resource) ->
 
   $scope.init = (id) ->
     Magnet = $resource("/doors/:door_id/magnets/:id.json", {door_id: id, id: "@id"}, {update: {method: "PUT"}})

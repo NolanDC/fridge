@@ -15,6 +15,8 @@
 //= require jquery-ui
 //= require angular
 //= require angular-resource
+//= require ui-utils.min
+//= require ui-utils-ieshiv.min
 //= require fridge_app
 //= require_tree .
 

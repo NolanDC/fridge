@@ -4,11 +4,18 @@ fridgeApp.controller 'DoorFormController', ($scope, $http, $resource, DoorResour
 
   $scope.remove = (word) ->
     index = $scope.door.words.indexOf(word)
-    $scope.door.words.splice(index, 1);  
+    $scope.door.words.splice(index, 1)
 
-  $scope.createWord = (word) ->
-    $scope.door.words.push(word);
+  $scope.createWord = ($event) ->
+    console.log $scope.newWord
+    $scope.door.words.push($scope.newWord)
+    $scope.newWord = ''
+    $event.preventDefault()
 
-  $scope.createDoor = (e) ->
+  $scope.createDoor = () ->
     door = new DoorResource({door: $scope.door})
     door.$save()
+
+  $scope.removeLastWord = ($event) ->
+    console.log 'removing'
+    $scope.door.words.pop() if $scope.newWord == ""

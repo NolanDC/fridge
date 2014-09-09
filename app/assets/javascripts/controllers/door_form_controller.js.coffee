@@ -7,9 +7,9 @@ fridgeApp.controller 'DoorFormController', ($scope, $http, $resource, DoorResour
     $scope.door.words.splice(index, 1)
 
   $scope.createWord = ($event) ->
-    console.log $scope.newWord
-    $scope.door.words.push($scope.newWord)
-    $scope.newWord = ''
+    if $scope.newWord && $scope.newWord.length > 0
+      $scope.door.words.push($scope.newWord)
+      $scope.newWord = ''
     $event.preventDefault()
 
   $scope.createDoor = () ->

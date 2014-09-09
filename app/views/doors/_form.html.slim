@@ -7,7 +7,7 @@ form ng-submit="createDoor()"
     .wordlist-wrapper focus-input=".new-word"
       span.word ng-repeat="word in door.words track by $index" ng-click="remove(word);"
         | {{word}}
-      = text_field_tag 'add_word', '', class: 'new-word', placeholder: 'add word', 'ng-model' => 'newWord', 'ui-keypress' => "{'enter': 'createWord($event)', 'backspace':'removeLastWord($event)'}"
+      = text_field_tag 'add_word', '', class: 'new-word', placeholder: 'add word', 'ng-model' => 'newWord', 'ui-keydown' => "{'enter': 'createWord($event)', 'backspace':'removeLastWord($event)'}"
 
   .field.actions
     = submit_tag

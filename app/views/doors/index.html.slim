@@ -1,5 +1,6 @@
+- content_for :title do
+  | Public Doors
 .centered
-  h1 Public Doors
   #doors ng-controller="DoorIndexController"
     .door ng-repeat="door in doors"
       = link_to "{{door.url | removeExtension}}" do

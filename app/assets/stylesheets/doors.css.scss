@@ -14,14 +14,18 @@
 
 #doors {
   .door {
+
     text-align: left;
     
     a {
       padding: 10px;
       display: block;
+      border: 1px solid white;
+      border-bottom: 2px solid white;      
+      text-decoration: none;
       
       &:hover {
-        background: #f2f2f2;
+        border-color: black;
       }      
     }
 

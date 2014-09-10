@@ -3,7 +3,7 @@ class Magnet < ActiveRecord::Base
   before_create :set_coordinates
 
   XRANGE = (0..1240)
-  YRANGE = (0..800)
+  YRANGE = (0..700)
 
   def position_style
     "left: #{x}px; top: #{y}px;"

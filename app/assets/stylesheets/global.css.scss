@@ -26,3 +26,31 @@ a {
     margin-bottom: 15px;
   }
 }
+
+header {
+  border-bottom: 1px solid black;
+  padding: 15px;
+  font-size: 16px;
+  color: black;
+  text-transform: uppercase;
+  font-size: 100;
+  font-style: italic;
+  transition: all linear 0.2s;
+  opacity: 0.1;
+
+  #logo {
+    width: 16px;
+    height: 16px;
+    line-height: 12px;
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: -2px;
+  }
+
+  &:hover {
+    transition: 0.1s;
+    opacity: 1;
+  }
+}

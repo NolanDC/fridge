@@ -17,5 +17,4 @@ fridgeApp.controller 'DoorFormController', ($scope, $http, $resource, DoorResour
     door.$save()
 
   $scope.removeLastWord = ($event) ->
-    console.log 'removing'
     $scope.door.words.pop() if $scope.newWord == ""

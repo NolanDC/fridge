@@ -1,6 +1,6 @@
-.title
-  = link_to '+', new_door_path, class: 'new-door'
+- content_for(:title) do
   = @door.name
+
 #door ng-controller="DoorController" ng-init="init('#{@door.hex}')"
     div.magnet id="{{magnet.id + '-magnet'}}" ng-repeat="magnet in magnets" ng-draggable="{stop:updateMagnet}" ng-style="{'left': magnet.x, 'top': magnet.y}" ng-drag-success="" class="ng-cloak"
       | {{magnet.word}}

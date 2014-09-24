@@ -1,3 +1,6 @@
 header
+  .menu
+    = link_to 'all doors', doors_path
+    = link_to 'create', new_door_path, class: 'button'
   #logo
   = yield :title

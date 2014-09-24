@@ -38,6 +38,11 @@ header {
   transition: all linear 0.2s;
   opacity: 0.1;
 
+  &:hover {
+    transition: 0.1s;
+    opacity: 1;
+  }  
+
   #logo {
     width: 16px;
     height: 16px;
@@ -46,11 +51,32 @@ header {
     border-bottom: 2px solid black;
     display: inline-block;
     margin-right: 8px;
-    margin-bottom: -2px;
+    margin-bottom: -3px;
   }
 
+  .menu {
+    float: right;
+    a {
+      float: left;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 12px;
+      padding: 6px;
+      margin-left: 10px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+  }
+}
+
+.menu a.button {
+  background: white;
+  border: 1px solid black;
+  border-bottom: 2px solid black;
+  padding: 4px;
   &:hover {
-    transition: 0.1s;
-    opacity: 1;
+    text-decoration: none;
   }
 }

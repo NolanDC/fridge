@@ -13,4 +13,8 @@
   &:hover {
     box-shadow: 0 0 3px #ccc;
   }
+
+  &.ui-draggable-dragging {
+    box-shadow: 0 0 5px #999;
+  }
 }

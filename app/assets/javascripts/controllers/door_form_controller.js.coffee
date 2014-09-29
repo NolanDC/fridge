@@ -14,7 +14,8 @@ fridgeApp.controller 'DoorFormController', ($scope, $http, $resource, DoorResour
 
   $scope.createDoor = () ->
     door = new DoorResource({door: $scope.door})
-    door.$save()
+    door.$save (data, headers) ->
+      window.location = headers('Location')
 
   $scope.removeLastWord = ($event) ->
     $scope.door.words.pop() if $scope.newWord == ""

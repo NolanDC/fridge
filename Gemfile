@@ -13,6 +13,7 @@ gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
 gem 'websocket-rails'
 gem 'mysql'
+gem 'mysql2'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

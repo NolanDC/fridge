@@ -2,7 +2,7 @@ fridgeApp.controller 'DoorIndexController', ($scope, $http, $resource, DoorResou
   $scope.doors = DoorResource.query()
 
 
-  dispatcher = new WebSocketRails('localhost:3000/websocket');
+  dispatcher = new WebSocketRails('<%= WEBSOCKET_HOST %>/websocket');
   channel = dispatcher.subscribe('doors')
   
   channel.bind 'subscriber-joined', (data) ->

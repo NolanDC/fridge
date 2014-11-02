@@ -1,3 +1,5 @@
+WEBSOCKET_HOST = 'localhost:3000'
+
 WebsocketRails.setup do |config|
 
   # Uncomment to override the default log level. The log level can be

@@ -5,7 +5,7 @@ fridgeApp.controller 'DoorController', ($scope, $http, $resource) ->
     $scope.magnets = Magnet.query()
     window.magnets = $scope.magnets
 
-    dispatcher = new WebSocketRails('localhost:3000/websocket');
+    dispatcher = new WebSocketRails('<%= WEBSOCKET_HOST %>/websocket');
     channel = dispatcher.subscribe("door-#{id}")
     
     channel.bind 'update', (magnet) ->

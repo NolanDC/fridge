@@ -14,7 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'websocket-rails'
 gem 'mysql'
 gem 'mysql2'
-gem 'puma'
+gem 'thin'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
